@@ -3,67 +3,70 @@
 
 
 
-
-
 int main()
 {
-	printf("Bonjour \n");
-	printf("Choissisez une operation: +, -, *, /, %% \n");
+    printf("Bonjour \n");
+    printf("Choisissez une operation: +, -, *, /, %% \n");
 
-	char symbol;
-	scanf("%c", &symbol);
+    char symbol;
+    scanf(" %c", &symbol);  
 
-	printf(" Choissisez un nombre\n");
-	int x;
+    printf("Choisissez un nombre\n");
+    int x;
+    scanf("%d", &x);
 
-        scanf("%d", &x);
+    printf("Choisissez un deuxieme nombre\n");
+    int y;
+    scanf("%d", &y);
 
-	printf("Choissisez un deuxieme nombre\n");
-	int y;
+    int t;  
 
-        scanf("%d", &y);
+    if (symbol == '+')
+    {
+        printf("addition\n");
+        t = x + y;  
+    }
+    else if (symbol == '-')
+    {
+        printf("soustraction\n");
+        t = x - y;
+    }
+    else if (symbol == '*')
+    {
+        printf("multiplication\n");
+        t = x * y;
+    }
+    else if (symbol == '/')
+    {
+        if (y == 0)
+        {
+            printf("Erreur: division par zero\n");
+            exit(1);
+        }
+        printf("division\n");
+        t = x / y;
+    }
+    else if (symbol == '%')
+    {
+        if (y == 0)
+        {
+            printf("Erreur: modulo par zero\n");
+            exit(1);
+        }
+        printf("modulo\n");
+        t = x % y;
+    }
+    else
+    {
+        printf("L'operateur n'est pas reconnu\n");
+        exit(1);
+    }
 
-	if(symbol == '+')
-	{
+    printf("%d %c %d = %d\n", x, symbol, y, t);
 
-		printf("addition\n");
-
-	}
-
-	else if(symbol == '-' )
-	{
-
-		printf("soustraction\n");
-
-	}
-
-	else if(symbol == '*' )
-	{
-
-		printf("multiplication\n");
-
-	}
-
-	else if(symbol == '/' )
-	{
-
-		printf("division\n");
-
-	}
-
-	else if(symbol == '%' )
-	{
-
-		printf("modulo\n");
-
-	}
-
-	else
-	{
-
-        	printf("L'operateur n'est pas reconnu\n");
-	}
-
-	exit (0);
-
+    return 0;
 }
+
+
+
+
