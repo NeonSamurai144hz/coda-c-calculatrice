@@ -19,7 +19,7 @@ int main()
     int y;
     scanf("%d", &y);
 
-    int t;  
+    double t;  
 
     if (symbol == '+')
     {
@@ -44,7 +44,7 @@ int main()
             exit(1);
         }
         printf("division\n");
-        t = x / y;
+         t = (double)x / (double)y;
     }
     else if (symbol == '%')
     {
@@ -62,9 +62,17 @@ int main()
         exit(1);
     }
 
-    printf("%d %c %d = %d\n", x, symbol, y, t);
+    if (symbol == '/')
+    {
+        printf("%d %c %d = %.2f\n", x, symbol, y, t);
+    }
+    else
+    {
+        printf("%d %c %d = %.0f\n", x, symbol, y, t);
+    }
 
     return 0;
+
 }
 
 
